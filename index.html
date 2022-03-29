@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="function.js" type="text/javascript"></script>
+    <title>inicio</title>
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="div-header">
+            <img src="Logo.svg" alt="">
+            <button class="transaction-button" onclick="openModal('modal')">Nova Transação</button>
+        </div>
+    </header>
+    <div class="dash">
+        <div class="div-summary">
+            <div class="summary">
+                <header class="summary-header">
+                    <p class="summary-p">Entradas</p>
+                    <img src='download (1).png' alt="Entradas" />
+                </header>
+                <strong>R$ 900,00</strong>
+            </div>
+            <div class="summary">
+                <header class="summary-header">
+                    <p class="">Saidas</p>
+                    <img src='download.png' alt="Entradas" />
+                </header>
+                <strong> R$ 800,00</strong>
+            </div>
+            <div class="summary total-summary">
+                <header class="summary-header">
+                    <p class="summary-p">Total</p>
+                    <img src='download (2).png' alt="Entradas" />
+                </header>
+                <strong>R$ 1.000,00</strong>
+            </div>
+
+        </div>
+        <div class="transactions">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Valor</th>
+                        <th>Categoria</th>
+                        <th> Data</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td> Teste</td>
+                        <td class="deposit"> R$ 1.000,00 </td>
+                        <td> Teste </td>
+                        <td > 15/06/2000 </td>
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+        <button
+        type="button"
+        class="close"
+        onclick="closeModal('modal')"
+        >
+        <img src="download (3).png" class="img-close" alt="Close" />
+      </button>
+        <form action="">
+
+            <h2>Cadastrar Transação</h2>
+            <input class="modal-input" placeholder="Titulo"/>
+            <input type="number" class="modal-input" placeholder="valor"/>
+            <div class="modal-type-transaction">
+                <button class="type-of-transaction entrada" id="entrada" type="button" onclick="(makeButtonActiveIn('entrada','saida'))">
+                    <img  class="img-type-transaction" src="download (4).png" alt="">
+                    <span class="span-type-transaction">Entrada</span>
+                </button>
+                <button class="type-of-transaction saida" type='button' id="saida" onclick="(makeButtonActiveOut('saida','entrada'))" >
+                    <img src="download (5).png" class="img-type-transaction" alt="">
+                    <span class="span-type-transaction">Saida</span>
+                </button>
+            </div>
+            <input class="modal-input" placeholder="Categoria"/>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    </div>
+
+
+</body>
+
+</body>
+
+</html>
