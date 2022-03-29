@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="function.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/function.js" type="text/javascript"></script>
     <title>inicio</title>
 </head>
 
 <body>
     <header class="header-container">
         <div class="div-header">
-            <img src="Logo.svg" alt="">
+            <img src="./public/Logo.svg" alt="">
             <button class="transaction-button" onclick="openModal('modal')">Nova Transação</button>
         </div>
     </header>
@@ -23,21 +23,21 @@
             <div class="summary">
                 <header class="summary-header">
                     <p class="summary-p">Entradas</p>
-                    <img src='download (1).png' alt="Entradas" />
+                    <img src='./public/entrada.png' alt="Entradas" />
                 </header>
                 <strong>R$ 900,00</strong>
             </div>
             <div class="summary">
                 <header class="summary-header">
                     <p class="">Saidas</p>
-                    <img src='download.png' alt="Entradas" />
+                    <img src='./public/saida.png' alt="Entradas" />
                 </header>
                 <strong> R$ 800,00</strong>
             </div>
             <div class="summary total-summary">
                 <header class="summary-header">
                     <p class="summary-p">Total</p>
-                    <img src='download (2).png' alt="Entradas" />
+                    <img src='./public/money.png' alt="Entradas" />
                 </header>
                 <strong>R$ 1.000,00</strong>
             </div>
@@ -80,7 +80,7 @@
         class="close"
         onclick="closeModal('modal')"
         >
-        <img src="download (3).png" class="img-close" alt="Close" />
+        <img src="./public/close.png" class="img-close" alt="Close" />
       </button>
         <form action="">
 
@@ -89,11 +89,11 @@
             <input type="number" class="modal-input" placeholder="valor"/>
             <div class="modal-type-transaction">
                 <button class="type-of-transaction entrada" id="entrada" type="button" onclick="(makeButtonActiveIn('entrada','saida'))">
-                    <img  class="img-type-transaction" src="download (4).png" alt="">
+                    <img  class="img-type-transaction" src="./public/entrada.png" alt="">
                     <span class="span-type-transaction">Entrada</span>
                 </button>
                 <button class="type-of-transaction saida" type='button' id="saida" onclick="(makeButtonActiveOut('saida','entrada'))" >
-                    <img src="download (5).png" class="img-type-transaction" alt="">
+                    <img src="./public/saida.png" class="img-type-transaction" alt="">
                     <span class="span-type-transaction">Saida</span>
                 </button>
             </div>
