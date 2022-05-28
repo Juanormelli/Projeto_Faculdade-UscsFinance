@@ -11,61 +11,42 @@
     <title>inicio</title>
 </head>
 
-<body>
-    <header class="header-container">
+<body onload="getTransactions(), show(), calculateTransactions()">
+    
+    <header class="header-container" >
         <div class="div-header">
             <img src="./public/Logo.svg" alt="">
             <button class="transaction-button" onclick="openModal('modal')">Nova Transação</button>
         </div>
     </header>
-    <div class="dash">
+    <div class="dash" >
         <div class="div-summary">
             <div class="summary">
                 <header class="summary-header">
                     <p class="summary-p">Entradas</p>
                     <img src='./public/entrada.png' alt="Entradas" />
                 </header>
-                <strong>R$ 900,00</strong>
+                <strong id="summary-deposit"></strong>
             </div>
             <div class="summary">
                 <header class="summary-header">
                     <p class="">Saidas</p>
                     <img src='./public/saida.png' alt="Entradas" />
                 </header>
-                <strong> R$ 800,00</strong>
+                <strong id="summary-withdraw"> </strong>
             </div>
             <div class="summary total-summary">
                 <header class="summary-header">
                     <p class="summary-p">Total</p>
                     <img src='./public/money.png' alt="Entradas" />
                 </header>
-                <strong>R$ 1.000,00</strong>
+                <strong id="summary-geral"></strong>
             </div>
 
         </div>
         <div class="transactions">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titulo</th>
-                        <th>Valor</th>
-                        <th>Categoria</th>
-                        <th> Data</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-
-                    <tr>
-                        <td> Teste</td>
-                        <td class="deposit"> R$ 1.000,00 </td>
-                        <td> Teste </td>
-                        <td > 15/06/2000 </td>
-
-                    </tr>
-
-
-                </tbody>
+            <table id="transactions-table">
+               
             </table>
         </div>
     </div>
@@ -82,26 +63,27 @@
         >
         <img src="./public/close.png" class="img-close" alt="Close" />
       </button>
-        <form action="">
+        
 
             <h2>Cadastrar Transação</h2>
-            <input class="modal-input" placeholder="Titulo"/>
-            <input type="number" class="modal-input" placeholder="valor"/>
-            <div class="modal-type-transaction">
-                <button class="type-of-transaction entrada" id="entrada" type="button" onclick="(makeButtonActiveIn('entrada','saida'))">
-                    <img  class="img-type-transaction" src="./public/entrada.png" alt="">
-                    <span class="span-type-transaction">Entrada</span>
-                </button>
-                <button class="type-of-transaction saida" type='button' id="saida" onclick="(makeButtonActiveOut('saida','entrada'))" >
-                    <img src="./public/saida.png" class="img-type-transaction" alt="">
-                    <span class="span-type-transaction">Saida</span>
-                </button>
-            </div>
-            <input class="modal-input" placeholder="Categoria"/>
-            <button type="submit">Cadastrar</button>
-        </form>
+            <input id="transaction-title" class="modal-input" placeholder="Titulo" required/>
+            <input id="transaction-value" type="number" class="modal-input" required placeholder="valor"/>
+           
+            <input id="transaction-type" type="radio" name="Option" value="deposit" required/> Entrada
+            <input id="transaction-type" type="radio"  name="Option" value="withdraw" required/> Saida 
+                                 
+            <input id="transaction-description" class="modal-input" placeholder="Descrição" required/>
+            <button type="submit" onclick="registerNewTransaction()">Cadastrar</button>
+        
     </div>
     </div>
+
+
+    
+    <div id="modal-new">
+        
+    </div>
+</div>
 
 
 </body>
